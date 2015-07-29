@@ -1,0 +1,40 @@
+<h1>eChannels Retail Production Dashboard</h1>
+<h2>(Jan '15 to Jun '15)</h2>
+
+<h3>Summary</h3>
+
+Holisticly initiate cross-platform initiatives before fully researched communities. Enthusiastically matrix progressive internal or "organic" sources rather than resource sucking technology. Quickly coordinate stand-alone communities whereas bricks-and-clicks partnerships. 
+
+Assertively reinvent resource maximizing expertise vis-a-vis just in time metrics. Conveniently productivate front-end leadership skills before ubiquitous initiatives. Authoritatively supply installed base networks through intuitive e-markets.
+
+<h3>Incidents by App for All Countries</h3>
+<div ng-include="'views/chart/incident_by_APP_and_SEV.html'"></div>
+
+
+<div>
+    <h3>Monthly Incidents by App for All Countries</h3>
+    <div ng-include="'views/chart/incident_per_App_monthly.html'"></div>
+</div>
+
+<table class="tasks" style="width:100%">
+  <tr>
+    <th>No</th>
+    <th>Description</th> 
+    <th>Defect</th>
+    <th>Incident</th>
+    <th>Status</th>
+    <th>Date Due</th>
+    <th>Owner</th>
+    <th>Remarks</th>
+  </tr>
+  <tr ng-repeat="task in tasks">
+    <td><a href="#/task/{{task.no}}" >{{task.no}}</a></td>
+    <td><a href="#/task/{{task.no}}" >{{task.description}}</a></td> 
+    <td><a href="http://jiraappl.sg.uobnet.com/browse/{{task.defect}}" >{{task.defect}}</a></td>
+    <th><a href="#/incident/{{task.incident}}" >{{task.incident}}</a></td>
+    <td>{{task.status}}</td>
+    <td>{{task.datedue}}</td>
+    <td>{{task.owner}}</td>
+    <td>{{task.remarks}}</td>
+  </tr>
+</table>

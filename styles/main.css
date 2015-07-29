@@ -1,0 +1,109 @@
+
+/* Ng Zhong Qin */
+
+@media only screen and (min-width: 40em) {
+    .top-bar {
+        text-align: center; }
+
+    ul.center-buttons {
+        display: inline-block; }
+
+    .logo {
+        left: 5px;
+        top: -2px;
+        position: absolute; }
+}
+
+.logo {
+    max-width: 10rem;
+    margin-top: -3px;
+    margin-left: 5px; }
+
+.menu-icon {
+    padding-top: 1.2rem; }
+
+.top-bar.expanded {
+    background: #ffffff; }
+
+.logo {
+    margin-top: .5rem; }
+
+.logged_in_as{
+    padding: 15px;
+}
+
+
+@media only screen {
+    .top-bar .top-bar-section ul li > a{
+        font-family: "DINNext","Helvetica Neue",Helvetica,sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
+        line-height: 62px;
+    }
+}
+
+.pretty th .current {
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.pretty th .asc {
+    background-image: url(up_arrow.gif);
+}
+
+.pretty th .desc {
+    background-image: url(down_arrow.gif);
+}
+
+.top-bar {
+  background: #FFFFFF;
+
+}
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+  background-color: #FFFFFF;
+  background: #FFFFFF;
+  color: red;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.top-bar .toggle-topbar.menu-icon a {
+  color: #000000;
+  height: 34px;
+  line-height: 33px;
+  padding: 0 2.5rem 0 0.9375rem;
+  position: relative;
+}
+
+
+.top-bar-section ul li:hover:not(.has-form) > a {
+  background-color: #FFFFFF;
+  color: #000000;
+  background: #FFFFFF;
+}
+
+.top-bar-section .dropdown li:not(.has-form):not(.active):hover > a:not(.button) {
+  background-color: #FFFFFF;
+  color: red;
+  background: #FFFFFF;
+}
+
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+  background-color: #FFFFFF;
+  color: #000000;
+  background: #FFFFFF;
+}
+
+.top-bar-section .dropdown li.title h5 a, .top-bar-section .dropdown li.parent-link a {
+  color: #000000;
+}
+
+.top-bar-section ul li:hover:not(.has-form) > a {
+  color: red;
+}
+

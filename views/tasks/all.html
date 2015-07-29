@@ -1,0 +1,27 @@
+<h1>TaskList</h1>
+
+<p>Incidents by App for All Countries</p>
+<div ng-include="'views/chart/incident_by_APP_and_SEV.html'"></div>
+
+<table class="tasks" style="width:100%">
+  <tr>
+    <th>No</th>
+    <th>Description</th> 
+    <th>Defect</th>
+    <th>Incident</th>
+    <th>Status</th>
+    <th>Date Due</th>
+    <th>Owner</th>
+    <th>Remarks</th>
+  </tr>
+  <tr ng-repeat="task in tasks">
+    <td><a href="#/task/{{task.no}}" >{{task.no}}</a></td>
+    <td><a href="#/task/{{task.no}}" >{{task.description}}</a></td> 
+    <td><a href="http://jiraappl.sg.uobnet.com/browse/{{task.defect}}" >{{task.defect}}</a></td>
+    <th><a href="#/incident/{{task.incident}}" >{{task.incident}}</a></td>
+    <td>{{task.status}}</td>
+    <td>{{task.datedue}}</td>
+    <td>{{task.owner}}</td>
+    <td>{{task.remarks}}</td>
+  </tr>
+</table>

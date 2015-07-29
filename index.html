@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="styles/foundation.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/body.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="pssdashApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+  <div class="contain-to-grid sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="/#/#"><span>Menu</span></a></li>
+    </ul>
+    <div class="logo">
+      <a href="/#/"><img src="images/logo-small.png"></a>
+    </div>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+
+            <li class="has-dropdown">
+              <a href="/#/dashboard/current">Dashboard</a>
+              <ul class="dropdown">
+                <li><a href="#">Previous</a></li>
+                <li ><a href="#">Closed</a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="/#/tasks">Task List</a>
+              <ul class="dropdown">
+                <li><a href="/#/tasks/new">New</a></li>
+                <li><a href="#">WIP</a></li>
+                <li ><a href="#">Closed</a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="#">Tape</a>
+              <ul class="dropdown">
+                <li><a href="#">New</a></li>
+                <li><a href="#">WIP</a></li>
+                <li ><a href="#">Closed</a></li>
+              </ul>
+            </li>
+
+        <li> <a href="/#/ssl">SSL</a></li>
+
+            <li class="has-dropdown">
+              <a href="#">Statistics</a>
+              <ul class="dropdown">
+                <li><a href="/#/stat/test">Test1</a></li>
+                <li><a href="/#/stat/test2">Test2</a></li>
+                <li ><a href="#">Closed</a></li>
+              </ul>
+            </li>
+
+
+
+      </ul>
+
+    </section>
+  </nav>
+</div>
+
+  <div class="row">
+    <div class="small-2 medium-2 large-2 columns"></div>
+    <div class="small-12 medium- 12 large-12 columns">
+
+     <div class="container">
+    <div ng-view=""></div>
+    </div>
+
+    </div>
+    <div class="small-2 medium-2 large-2 columns"></div>
+  </div>
+
+
+
+<footer class="footer">
+  <div class="row">
+      <div class="small-6 medium-6 large-3 columns"><span>Home</span></div>
+      <div class="small-6 medium-6 large-3 columns"><span>About</span></div>
+      <div class="small-6 medium-6 large-3 columns"><span>FAQs</span></div>
+      <div class="small-6 medium-6 large-3 columns"><span>Contact</span></div>
+    <div class="small-12 medium-4 large-6 columns"><span>©eChannels Retail PSS 2015</span></div>
+    <div class="small-12 medium-4 large-6 columns right stamp"></div>
+  </div>
+</footer>
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="scripts/modernizr.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/angular-aria.js"></script>
+    <script src="scripts/angular-cookies.js"></script>
+    <script src="scripts/angular-messages.js"></script>
+    <script src="scripts/angular-resource.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-sanitize.js"></script>
+    <script src="scripts/angular-touch.js"></script>
+    <script src="scripts/fastclick.js"></script>
+    <script src="scripts/jquery.cookie.js"></script>
+    <script src="scripts/jquery.placeholder.js"></script>
+    <script src="scripts/foundation.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+       
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/tasks/all.js"></script>
+        <script src="scripts/controllers/tasks/new.js"></script>
+        <script src="scripts/controllers/dashboard/current.js"></script>
+        <script src="scripts/controllers/stat/test.js"></script>
+        <script src="scripts/controllers/stat/test2.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/d3.v3.min.js"></script>
+        <script src="scripts/jquery.min.js"></script>
+         <script src="scripts/stickyFooter.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
