@@ -1,4 +1,4 @@
-<h1>TaskList</h1>
+<h1>Task List</h1>
 
 <form action="/#/tasks/new">
     <input type="submit" value="New Task"  class="button">           
@@ -16,8 +16,6 @@
         <input type="text" class="form-control" placeholder="Search Filter 1" ng-model="searchField1">
         <input type="text" class="form-control" placeholder="Search Filter 2" ng-model="searchField2">
         <input type="text" class="form-control" placeholder="Search Filter 3" ng-model="searchField3">
-        <input type="text" class="form-control" placeholder="Search Filter 4" ng-model="searchField4">
-        <input type="text" class="form-control" placeholder="Search Filter 5" ng-model="searchField5">
 
       </div>      
     </div>
@@ -34,7 +32,7 @@
     <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Owner</a></th>
     <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Remarks</a></th>
   </tr>
-  <tr ng-repeat="task in tasks | orderBy:sortType:sortReverse | filter:searchField1 | filter:searchField2 | filter:searchField3 | filter:searchField4 | filter:searchField5">
+  <tr ng-repeat="task in tasks | orderBy:sortType:sortReverse | filter:searchField1 | filter:searchField2 | filter:searchField3">
     <td><a href="#/task/{{task.no}}" >{{task.no}}</a></td>
     <td><a href="#/task/{{task.no}}" >{{task.description}}</a></td> 
     <td><a href="http://jiraappl.sg.uobnet.com/browse/{{task.defect}}" >{{task.defect}}</a></td>
