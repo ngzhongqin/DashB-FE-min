@@ -41,6 +41,11 @@ var app = angular
         controller: 'TasksNewCtrl',
         controllerAs: 'tasksNew'
       })
+      .when('/tasks/:param1', {
+        templateUrl: 'views/tasks/view.html',
+        controller: 'TaskViewCtrl',
+        controllerAs: 'taskView'
+      })
       .when('/stat/test', {
         templateUrl: 'views/stat/test.html',
         controller: 'StatTestCtrl',

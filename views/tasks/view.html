@@ -1,0 +1,75 @@
+<div class="center row">
+  <div class="section-container tabs" data-section="tabs">
+    <section>
+      <div class="content" data-section-content>
+        <p>
+        <div class="row">
+          <div class="small-12 large-12 columns">
+
+            <div class="small-2 large-2 columns"></div>
+
+             <div class="small-8 columns">
+                  <h1 class="welcome">Task {{task.no}}: {{task.description}}</h1>
+
+                  <p>task: {{task}}</p>
+
+                  <form ng-submit="submitPost()">
+                    <div style="display:none"></div>
+                    <div class="row collapse">
+                      <div class="small-12  large-8 columns">
+                        <input id="incident" placeholder="Incident" type="text" ng-model="task.incident"/>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12  large-8 columns">
+                        <input id="defect" placeholder="Defect" type="text" ng-model="task.defect"/>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        <input id="description" placeholder="Description" type="text" ng-model="task.description"/>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        <select ng-model="task.status" >
+                          <option value="" disabled selected>Select Status</option>
+                          <option value="WIP" >WIP</option>
+                          <option value="Closed">Closed</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        <select ng-model="task.owner" >
+                          <option value="" disabled selected>Select Owner</option>
+                          <option value="Subra" >Subra</option>
+                          <option value="Mishra" >Mishra</option>
+                          <option value="Sasi" >Sasi</option>
+                          <option value="Zhong Qin">Zhong Qin</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        <input id="remarks" placeholder="Remarks" type="text" ng-model="task.remarks"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                        <button name="button" type="submit">Update</button>
+                    </div>
+                  </form>     
+          </div>
+          <div class="small-2 large-2 columns"></div>       
+
+          </div>
+        </div>
+      </p>
+      </div>
+    </section>
+  </div>
+  <div>
+</div>
+</div>
+
