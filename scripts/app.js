@@ -50,10 +50,7 @@ var app = angular
         templateUrl: 'views/stat/test2.html',
         controller: 'StatTest2Ctrl',
         controllerAs: 'statTest2'
-      })
-      .when('/stat/test2/data.csv', {
-        templateUrl: 'views/stat/data.csv'
-      })              
+      })          
       .when('/dashboard/current', {
         templateUrl: 'views/dashboard/current.html',
         controller: 'DashboardCurrentCtrl',

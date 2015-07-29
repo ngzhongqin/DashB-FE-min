@@ -1,20 +1,35 @@
 <h1>TaskList</h1>
 
-<p>Incidents by App for All Countries</p>
-<div ng-include="'views/chart/incident_by_APP_and_SEV.html'"></div>
+<p>Sort Type: {{sortType}}</p>
+<p>Sort Reverse: {{sortReverse}}</p>
+
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+        <input type="text" class="form-control" placeholder="Search Filter 1" ng-model="searchField1">
+        <input type="text" class="form-control" placeholder="Search Filter 2" ng-model="searchField2">
+        <input type="text" class="form-control" placeholder="Search Filter 3" ng-model="searchField3">
+        <input type="text" class="form-control" placeholder="Search Filter 4" ng-model="searchField4">
+        <input type="text" class="form-control" placeholder="Search Filter 5" ng-model="searchField5">
+
+      </div>      
+    </div>
+  </form>
 
 <table class="tasks" style="width:100%">
   <tr>
-    <th>No</th>
-    <th>Description</th> 
-    <th>Defect</th>
-    <th>Incident</th>
-    <th>Status</th>
-    <th>Date Due</th>
-    <th>Owner</th>
-    <th>Remarks</th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">No</a></th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Description</a></th> 
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Defect</a></th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Incident</a></th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Status</a></th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Date Due</a></th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Owner</a></th>
+    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Remarks</a></th>
   </tr>
-  <tr ng-repeat="task in tasks">
+  <tr ng-repeat="task in tasks | orderBy:sortType:sortReverse | filter:searchField1 | filter:searchField2 | filter:searchField3 | filter:searchField4 | filter:searchField5">
     <td><a href="#/task/{{task.no}}" >{{task.no}}</a></td>
     <td><a href="#/task/{{task.no}}" >{{task.description}}</a></td> 
     <td><a href="http://jiraappl.sg.uobnet.com/browse/{{task.defect}}" >{{task.defect}}</a></td>
