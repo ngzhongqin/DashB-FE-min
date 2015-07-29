@@ -37,6 +37,7 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
 	$scope.submitPost = function () {
     console.log("TaskViewCtrl submitPost");
           var data = {
+              'no'     : $scope.task.no,
               'defect' : $scope.task.defect,
               'incident' : $scope.task.incident,
               'owner' : $scope.task.owner,
@@ -44,9 +45,11 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
               'status' : $scope.task.status
           };
 
+          var req_url = 'http://localhost:8080/tasks?action=Update'+'&'+'task='+$routeParams.param1;
           var req = {
            method: 'POST',
-           url: 'http://localhost:8080/tasks/new',
+
+           url: req_url,
            headers: {
              'Content-Type':  "text/plain"
            },
