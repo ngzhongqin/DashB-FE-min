@@ -33,6 +33,11 @@
                     </div>
                     <div class="row collapse">
                       <div class="small-12 columns ">
+                        <input id="datedue" placeholder="DateDue" type="date" ng-model="task.datedue"/>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
                         <select ng-model="task.status" >
                           <option value="" disabled selected>Select Status</option>
                           <option value="WIP" >WIP</option>

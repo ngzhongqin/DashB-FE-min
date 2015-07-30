@@ -9,7 +9,7 @@
             <div class="small-2 large-2 columns"></div>
 
              <div class="small-8 columns">
-                  <h1 class="welcome">[TL-{{task.no}}]: {{task.description}}</h1>
+                  <h3 class="welcome">[TL-{{task.no}}]: {{task.description}}</h3>
 
                   <p>task: {{task}}</p>
 
@@ -30,6 +30,13 @@
                         <input id="description" placeholder="Description" type="text" ng-model="task.description"/>
                       </div>
                     </div>
+                    
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        <input id="datedue" placeholder="DateDue" type="date" ng-model="task.datedue"/>
+                      </div>
+                    </div>
+
                     <div class="row collapse">
                       <div class="small-12 columns ">
                         <select ng-model="task.status" >

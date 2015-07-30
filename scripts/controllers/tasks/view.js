@@ -43,7 +43,8 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
               'owner' : $scope.task.owner,
               'description' : $scope.task.description,
               'status' : $scope.task.status,
-              'remarks': $scope.task.remarks
+              'remarks': $scope.task.remarks,
+              'datedue': $scope.task.datedue
           };
 
           var req_url = 'http://localhost:8080/tasks?action=Update'+'&'+'task='+$routeParams.param1;
@@ -63,6 +64,7 @@ console.log("TaskViewCtrl submitPost req incident:"+req.data.data.incident);
 console.log("TaskViewCtrl submitPost req owner:"+req.data.data.owner);
 console.log("TaskViewCtrl submitPost req description:"+req.data.data.description);
 console.log("TaskViewCtrl submitPost req remarks:"+req.data.data.remarks);
+console.log("TaskViewCtrl submitPost req datedue:"+req.data.data.datedue);
 
 
           $http(req).success(function (data, status, headers, config) {
