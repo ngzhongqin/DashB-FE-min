@@ -28,6 +28,9 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
 
       $http(req).success(function (data, status, headers, config) {
           $scope.task = data.data; 
+         $scope.task.datedue = new Date($scope.task.datedue);
+
+
           console.log("data.data"+ data.data);
           console.log("$scope.task: "+ $scope.task);
       }).error(function (data, status, headers, config) {
