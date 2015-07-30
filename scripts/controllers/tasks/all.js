@@ -14,9 +14,12 @@ app.controller('TasksCtrl', function ($scope, $http) {
         'field1' : $scope.tasks,
     };
 
+    var url = backendHostname+'/tasks';
+
     var req = {
      method: 'POST',
-     url: 'http://localhost:8080/tasks',
+     url: url,
+     // url: 'http://localhost:8080/tasks',
      headers: {
        'Content-Type': "text/plain"
      },

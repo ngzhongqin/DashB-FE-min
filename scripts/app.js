@@ -8,6 +8,8 @@ $(document).foundation();
  *
  * Main module of the application.
  */
+var backendHostname ='http://localhost:8080';
+
 var app = angular
   .module('pssdashApp', [
     'ngAnimate',
@@ -21,10 +23,15 @@ var app = angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      // .when('/', {
+      //   templateUrl: 'views/main.html',
+      //   controller: 'MainCtrl',
+      //   controllerAs: 'main'
+      // })
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/tasks/all.html',
+        controller: 'TasksCtrl',
+        controllerAs: 'tasks'
       })
       .when('/about', {
         templateUrl: 'views/about.html',

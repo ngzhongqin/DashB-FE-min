@@ -11,7 +11,7 @@
 app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams) {
 
   console.log("$routeParams.param1: "+$routeParams.param1);
-  var url = 'http://localhost:8080/tasks?action=View'+'&'+'task='+$routeParams.param1;
+  var url = backendHostname+'/tasks?action=View'+'&'+'task='+$routeParams.param1;
 
     var data = {
         'field1' : 'dummy'
@@ -47,7 +47,7 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
               'datedue': $scope.task.datedue
           };
 
-          var req_url = 'http://localhost:8080/tasks?action=Update'+'&'+'task='+$routeParams.param1;
+          var req_url = backendHostname+'/tasks?action=Update'+'&'+'task='+$routeParams.param1;
           var req = {
            method: 'POST',
 

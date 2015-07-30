@@ -22,7 +22,7 @@ app.controller('TasksNewCtrl', function ($scope, $http, $location,$routeParams) 
               'datedue' : $scope.task.datedue
           };
 
-          var req_url = 'http://localhost:8080/tasks?action=New';
+          var req_url = backendHostname+'/tasks?action=New';
           var req = {
            method: 'POST',
            url: req_url,
