@@ -8,7 +8,7 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TasksNewCtrl', function ($scope, $http, $location) {
+app.controller('TasksNewCtrl', function ($scope, $http, $location,$routeParams) {
 
 	$scope.submitPost = function () {
     console.log("TasksNewCtrl submitPost");
@@ -17,12 +17,14 @@ app.controller('TasksNewCtrl', function ($scope, $http, $location) {
               'incident' : $scope.task.incident,
               'owner' : $scope.task.owner,
               'description' : $scope.task.description,
-              'status' : $scope.task.status
+              'status' : $scope.task.status,
+              'remarks' : $scope.task.remarks
           };
 
+          var req_url = 'http://localhost:8080/tasks?action=New';
           var req = {
            method: 'POST',
-           url: 'http://localhost:8080/tasks/new',
+           url: req_url,
            headers: {
              'Content-Type':  "text/plain"
            },
@@ -34,6 +36,7 @@ console.log("TaskNewCtrl submitPost req defect:"+req.data.data.defect);
 console.log("TaskNewCtrl submitPost req incident:"+req.data.data.incident);
 console.log("TaskNewCtrl submitPost req owner:"+req.data.data.owner);
 console.log("TaskNewCtrl submitPost req description:"+req.data.data.description);
+console.log("TaskNewCtrl submitPost req description:"+req.data.data.remarks);
 
 
           $http(req).success(function (data, status, headers, config) {

@@ -42,7 +42,8 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
               'incident' : $scope.task.incident,
               'owner' : $scope.task.owner,
               'description' : $scope.task.description,
-              'status' : $scope.task.status
+              'status' : $scope.task.status,
+              'remarks': $scope.task.remarks
           };
 
           var req_url = 'http://localhost:8080/tasks?action=Update'+'&'+'task='+$routeParams.param1;
@@ -61,6 +62,7 @@ console.log("TaskViewCtrl submitPost req defect:"+req.data.data.defect);
 console.log("TaskViewCtrl submitPost req incident:"+req.data.data.incident);
 console.log("TaskViewCtrl submitPost req owner:"+req.data.data.owner);
 console.log("TaskViewCtrl submitPost req description:"+req.data.data.description);
+console.log("TaskViewCtrl submitPost req remarks:"+req.data.data.remarks);
 
 
           $http(req).success(function (data, status, headers, config) {
