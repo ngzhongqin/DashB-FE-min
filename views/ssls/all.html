@@ -1,0 +1,55 @@
+<h1>SSL List</h1>
+<!-- 
+<p> SSL : {{ssls}}</p> -->
+
+<form action="#/ssls/new">
+    <input type="submit" value="New SSL"  class="button">           
+</form>
+
+
+<!-- <p>Sort Type: {{sortType}}</p>
+<p>Sort Reverse: {{sortReverse}}</p> -->
+
+  <form>
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-search"></i></div>
+
+        <input type="text" class="form-control" placeholder="Search Filter 1" ng-model="searchField1">
+        <input type="text" class="form-control" placeholder="Search Filter 2" ng-model="searchField2">
+        <input type="text" class="form-control" placeholder="Search Filter 3" ng-model="searchField3">
+
+      </div>      
+    </div>
+  </form>
+
+<table class="ssls" style="width:100%">
+  <tr>
+    <th><a href ="" ng-click="sortType ='id'; sortReverse = !sortReverse">No</a></th>
+    <th><a href ="" ng-click="sortType ='po'; sortReverse = !sortReverse">PO</a></th>
+    <th><a href ="" ng-click="sortType ='poStatus'; sortReverse = !sortReverse">PO Sts</a></th>
+    <th><a href ="" ng-click="sortType ='country'; sortReverse = !sortReverse">Cty</a></th> 
+    <th><a href ="" ng-click="sortType ='environment'; sortReverse = !sortReverse">Env</a></th>
+    <th><a href ="" ng-click="sortType ='application'; sortReverse = !sortReverse">App</a></th>
+    <th><a href ="" ng-click="sortType ='common_name'; sortReverse = !sortReverse">CN</a></th>
+    <th><a href ="" ng-click="sortType ='start_date'; sortReverse = !sortReverse">Start</a></th>
+    <th><a href ="" ng-click="sortType ='end_date'; sortReverse = !sortReverse">End</a></th>
+    <th><a href ="" ng-click="sortType ='owner'; sortReverse = !sortReverse">Owner</a></th>
+    <th><a href ="" ng-click="sortType ='cert_type'; sortReverse = !sortReverse">Type</a></th>
+    <th><a href ="" ng-click="sortType ='key_strength'; sortReverse = !sortReverse">Key</a></th>
+  </tr>
+  <tr ng-repeat="ssl in ssls | orderBy:sortType:sortReverse | filter:searchField1 | filter:searchField2 | filter:searchField3">
+    <td><a href="#/ssls/{{ssl.id}}" >{{ssl.id}}</a></td>
+    <td>{{ssl.po}}</td> 
+    <td>{{ssl.poStatus}}</td>
+    <td>{{ssl.country}}</td> 
+    <td>{{ssl.environment}}</td>
+    <th>{{ssl.application}}</td>
+    <td><a href="#/ssls/{{ssl.id}}" >{{ssl.common_name}}</a></td>
+    <td>{{ssl.start_date}}</td>
+    <td>{{ssl.end_date}}</td>
+    <td>{{ssl.owner}}</td>
+    <td>{{ssl.cert_type}}</td>
+    <td>{{ssl.key_strength}}</td>
+  </tr>
+</table>

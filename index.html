@@ -15,6 +15,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/body.css">
+    <!-- <link rel="stylesheet" href="styles/sign_in_sign_up.css"> -->
     <link rel="stylesheet" href="styles/footer.css">
     <!-- endbuild -->
   </head>
@@ -28,39 +29,20 @@
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="/#/#"><span>Menu</span></a></li>
+      <li class="toggle-topbar menu-icon"><a href="#/#"><span>Menu</span></a></li>
     </ul>
     <div class="logo">
-      <a href="/#/"><img src="images/logo-small.png"></a>
+      <a href="#/"><img src="images/logo-small.png"></a>
     </div>
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
 
             <li class="has-dropdown">
-              <a href="/#/dashboard/current">Dashboard</a>
+              <a href="#/tasks">BAU</a>
               <ul class="dropdown">
-                <li><a href="#">Previous</a></li>
-                <li ><a href="#">Closed</a></li>
-              </ul>
-            </li>
-
-            <li class="has-dropdown">
-              <a href="/#/tasks">BAU</a>
-              <ul class="dropdown">
-                <li><a href="/#/tasks">Task List</a></li>
-                <li><a href="#">Tape Restore</a></li>
-                <li ><a href="#">SSL Renewal</a></li>
-                <li ><a href="#">Key Renewal</a></li>
-              </ul>
-            </li>
-
-            <li class="has-dropdown">
-              <a href="#">Statistics</a>
-              <ul class="dropdown">
-                <li><a href="/#/stat/test">Test1</a></li>
-                <li><a href="/#/stat/test2">Test2</a></li>
-                <li ><a href="#">Closed</a></li>
+                <li><a href="#/tasks">Task List</a></li>
+                <li ><a href="#/ssls">SSL Renewal</a></li>
               </ul>
             </li>
 
@@ -123,10 +105,16 @@
         <script src="scripts/controllers/tasks/all.js"></script>
         <script src="scripts/controllers/tasks/new.js"></script>
         <script src="scripts/controllers/tasks/view.js"></script>
+
+        <script src="scripts/controllers/ssls/all.js"></script>
+        <script src="scripts/controllers/ssls/new.js"></script>
+        <script src="scripts/controllers/ssls/view.js"></script>
+
         <script src="scripts/controllers/dashboard/current.js"></script>
         <script src="scripts/controllers/stat/test.js"></script>
         <script src="scripts/controllers/stat/test2.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/login.js"></script>
         <script src="scripts/vendor/d3.v3.min.js"></script>
         <script src="scripts/vendor/jquery.min.js"></script>
          <script src="scripts/vendor/stickyFooter.js"></script>

@@ -1,6 +1,6 @@
 <h1>Task List</h1>
 
-<form action="/#/tasks/new">
+<form action="#/tasks/new">
     <input type="submit" value="New Task"  class="button">           
 </form>
 
@@ -24,18 +24,18 @@
 <table class="tasks" style="width:100%">
   <tr>
     <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">No</a></th>
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Description</a></th> 
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Defect</a></th>
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Incident</a></th>
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Status</a></th>
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Date Due</a></th>
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Owner</a></th>
-    <th><a href ="" ng-click="sortType ='no'; sortReverse = !sortReverse">Remarks</a></th>
+    <th><a href ="" ng-click="sortType ='description'; sortReverse = !sortReverse">Description</a></th> 
+    <th><a href ="" ng-click="sortType ='defect'; sortReverse = !sortReverse">Defect</a></th>
+    <th><a href ="" ng-click="sortType ='incident'; sortReverse = !sortReverse">Incident</a></th>
+    <th><a href ="" ng-click="sortType ='status'; sortReverse = !sortReverse">Status</a></th>
+    <th><a href ="" ng-click="sortType ='datedueFormat'; sortReverse = !sortReverse">Date Due</a></th>
+    <th><a href ="" ng-click="sortType ='owner'; sortReverse = !sortReverse">Owner</a></th>
+    <th><a href ="" ng-click="sortType ='remarks'; sortReverse = !sortReverse">Remarks</a></th>
   </tr>
   <tr ng-repeat="task in tasks | orderBy:sortType:sortReverse | filter:searchField1 | filter:searchField2 | filter:searchField3">
     <td><a href="#/tasks/{{task.no}}" >{{task.no}}</a></td>
     <td><a href="#/tasks/{{task.no}}" >{{task.description}}</a></td> 
-    <td><a href="http://jiraappl.sg.uobnet.com/browse/{{task.defect}}" >{{task.defect}}</a></td>
+    <td><a href="http://jiraappl.sg.uobnet.com/browse/{{task.defect}}" target="_blank">{{task.defect}}</a></td>
     <th><a href="#/incident/{{task.incident}}" >{{task.incident}}</a></td>
     <td>{{task.status}}</td>
     <td>{{task.datedueFormat}}</td>

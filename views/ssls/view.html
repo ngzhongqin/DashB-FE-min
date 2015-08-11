@@ -1,0 +1,176 @@
+<div class="center row">
+  <div class="section-container tabs" data-section="tabs">
+    <section>
+      <div class="content" data-section-content>
+        <p>
+        <div class="row">
+          <div class="small-12 large-12 columns">
+
+            <div class="small-2 large-2 columns"></div>
+
+             <div class="small-8 columns">
+                  <h3 class="welcome">[SSL-{{ssl.id}}]: {{ssl.common_name}}</h3>
+
+                  <p>SSL: {{ssl}}</p>
+
+                  <form ng-submit="submitPost()">
+                    <div style="display:none"></div>
+                    <div class="row collapse">
+                      <div class="small-12  large-8 columns">
+                        Purchase Order: <input id="po" placeholder="Purchase Order" type="text" ng-model="ssl.po"/>
+                      </div>
+                    </div>
+                    <div class="row collapse">
+                      <div class="small-12  large-8 columns">
+                        Purchase Order Status: <input id="poStatus" placeholder="Purchase Order Status" type="text" ng-model="ssl.poStatus"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12  large-8 columns">
+                        Common Name: <input id="common_name" placeholder="Common Name" type="text" ng-model="ssl.common_name"/>
+                      </div>
+                    </div>
+
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Application:
+                        <select ng-model="ssl.application" >
+                          <option value="" disabled selected>Select Application</option>
+                          <option value="PIB">PIB</option>
+                          <option value="MBK">MBK</option>
+                          <option value="RUS">RUS</option>
+                          <option value="WSM">WSM</option>
+                           <option value="WCM">WCM</option>
+                            <option value="Revamp">Revamp</option>
+                             <option value="PIBDM">PIBDM</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Country:
+                        <select ng-model="ssl.country" >
+                          <option value="" disabled selected>Select Country</option>
+                          <option value="CN" >China</option>
+                          <option value="TH" >Thailand</option>
+                          <option value="SG" >Singapore</option>
+                          <option value="HK">Hong Kong</option>
+                           <option value="ID">Indonesia</option>
+                           <option value="MY">Malaysia</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Environment:
+                        <select ng-model="ssl.environment" >
+                          <option value="" disabled selected>Select Environment</option>
+                          <option value="DEV" >DEV</option>
+                          <option value="SIT" >SIT</option>
+                          <option value="UAT" >UAT</option>
+                          <option value="PRD">PRD</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div class="row collapse">
+                      <div class="small-12  large-8 columns">
+                        Organization:
+                        <input id="end_date" placeholder="Organization" type="text" ng-model="ssl.organization"/>
+                      </div>
+                    </div>
+
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Organizational Unit:
+                        <input id="organizational_unit" placeholder="Organizational Unit" type="text" ng-model="ssl.organizational_unit"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Cert Type:
+                        <select ng-model="ssl.cert_type" >
+                          <option value="" disabled selected>Select Cert Type</option>
+                          <option value="VeriSign" >VeriSign</option>
+                          <option value="Internal CA" >Internal CA</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Key Strength:
+                        <select ng-model="ssl.key_strength" >
+                          <option value="" disabled selected>Select Key Strength</option>
+                          <option value="SHA-1" >SHA-1</option>
+                          <option value="SHA-2" >SHA-2</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Start Date:
+                        <input id="start_date" placeholder="Start Date" type="date" ng-model="ssl.start_date"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        End Date:
+                        <input id="end_date" placeholder="End Date" type="date" ng-model="ssl.end_date"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Date due:
+                        <input id="datedue" placeholder="DateDue" type="date" ng-model="ssl.datedue"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Owner:
+                        <select ng-model="ssl.owner" >
+                          <option value="" disabled selected>Select Owner</option>
+                          <option value="Subra" >Subra</option>
+                          <option value="Mishra" >Mishra</option>
+                          <option value="Sasi" >Sasi</option>
+                          <option value="Zhong Qin">Zhong Qin</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                      <div class="small-12 columns ">
+                        Teams Involved:
+                        <input id="Team Involved" placeholder="Teams Involved" type="text" ng-model="ssl.team_involved"/>
+                      </div>
+                    </div>
+
+                    <div class="row collapse">
+                        <button name="button" type="submit">Update</button>
+                    </div>
+                  </form>     
+          </div>
+          <div class="small-2 large-2 columns"></div>       
+
+          </div>
+        </div>
+      </p>
+      </div>
+    </section>
+  </div>
+  <div>
+</div>
+</div>
+

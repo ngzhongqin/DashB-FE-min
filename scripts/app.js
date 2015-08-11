@@ -53,6 +53,29 @@ var app = angular
         controller: 'TaskViewCtrl',
         controllerAs: 'taskView'
       })
+
+      .when('/ssls', {
+        templateUrl: 'views/ssls/all.html',
+        controller: 'SslCtrl',
+        controllerAs: 'ssl'
+      })
+      .when('/ssls/new', {
+        templateUrl: 'views/ssls/new.html',
+        controller: 'SslNewCtrl',
+        controllerAs: 'sslNew'
+      })
+      .when('/ssls/:param1', {
+        templateUrl: 'views/ssls/view.html',
+        controller: 'SslViewCtrl',
+        controllerAs: 'sslView'
+      })
+
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'loginß'
+      })
+
       .when('/stat/test', {
         templateUrl: 'views/stat/test.html',
         controller: 'StatTestCtrl',

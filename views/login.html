@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="small-2 medium-2 large-2 columns"></div>
+    <div class="small-12 medium- 12 large-12 columns"><div class="center row">
+  <div class="section-container tabs" data-section="tabs">
+    <section>
+      <p class="title" data-section-title><a href="#/login">Login</a></p>
+      <div class="content" data-section-content>
+        <p>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="signup-panel">
+              <p class="welcome">Welcome back!</p>
+
+              <p>Login: {{login}}, Code: {{code}}, Message: {{message}}, Session: {{dashb_session}}</p>
+              <form accept-charset="UTF-8" ng-submit="submitPost()">
+                <div style="display:none" >
+              </div>
+                <div class="row collapse">
+                  <div class="small-2 columns">
+                    <span class="prefix"><i class="fi-mail"></i></span>
+                  </div>
+                  <div class="small-10  columns">
+                    <input id="email" name="email" placeholder="Email" type="email" ng-model="login.email"/>
+                  </div>
+                </div>
+                <div class="row collapse">
+                  <div class="small-2 columns ">
+                    <span class="prefix"><i class="fi-lock"></i></span>
+                  </div>
+                  <div class="small-10 columns ">
+                    <input id="password" name="password" placeholder="Password" type="password" ng-model="login.password"/>
+                  </div>
+                </div>
+                <button name="button" type="submit">Login</button>
+</form>
+            </div>
+          </div>
+        </div></p>
+      </div>
+    </section>
+  </div>
+  <div>
+</div>
+</div></div>
+    <div class="small-2 medium-2 large-2 columns"></div>
+  </div>
