@@ -23,11 +23,6 @@ var app = angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      // .when('/', {
-      //   templateUrl: 'views/main.html',
-      //   controller: 'MainCtrl',
-      //   controllerAs: 'main'
-      // })
       .when('/', {
         templateUrl: 'views/tasks/all.html',
         controller: 'TasksCtrl',
@@ -73,9 +68,15 @@ var app = angular
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'loginß'
+        controllerAs: 'login'
       })
 
+      .when('/signup', {
+        templateUrl: 'views/signup.html',
+        controller: 'SignUpCtrl',
+        controllerAs: 'signup'
+      })
+    
       .when('/stat/test', {
         templateUrl: 'views/stat/test.html',
         controller: 'StatTestCtrl',

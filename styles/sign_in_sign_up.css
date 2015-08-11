@@ -39,7 +39,11 @@ p.title {
   border-bottom: 5px solid #cccccc !important;
 }
 
-.content {
+.signin_content {
+  height: 450px;
+}
+
+.signup_content {
   height: 450px;
 }
 
