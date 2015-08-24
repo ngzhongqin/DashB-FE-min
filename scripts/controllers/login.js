@@ -13,7 +13,7 @@ app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $loca
 	$scope.submitPost = function () {
     console.log("LoginCtrl submitPost");
           var data = {
-              'email' : $scope.login.email,
+              'lanId' : $scope.login.lanId,
               'password' : $scope.login.password,
           };
 
@@ -29,7 +29,7 @@ app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $loca
           }
 
 
-console.log("LoginCtrl submitPost req email:"+req.data.data.email);
+console.log("LoginCtrl submitPost req lanId:"+req.data.data.lanId);
 console.log("LoginCtrl submitPost req password:"+req.data.data.password);
 
 

@@ -13,7 +13,7 @@ app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $loc
 	$scope.submitPost = function () {
     console.log("SignUpCtrl submitPost");
           var data = {
-              'email' : $scope.signup.email,
+              'lanId' : $scope.signup.lanId,
               'password' : $scope.signup.password,
               'full_name' : $scope.signup.full_name
           };
@@ -31,7 +31,7 @@ app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $loc
           };
 
 
-        console.log("SignUpCtrl submitPost req email:"+req.data.data.email);
+        console.log("SignUpCtrl submitPost req lanId:"+req.data.data.lanId);
         console.log("SignUpCtrl submitPost req full_name:"+req.data.data.full_name);
         console.log("SignUpCtrl submitPost req password:"+req.data.data.password);
 
