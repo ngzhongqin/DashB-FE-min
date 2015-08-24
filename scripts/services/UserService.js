@@ -30,6 +30,19 @@ return {
                 if(data.user!=null){
                     console.log("data.user.full_name"+ data.user.full_name);
                 }
+                
+              if(data!=null){
+                if(data.data!=null){
+                    if(data.data.status!=null){
+                          $rootScope.code = data.data.status.code;
+                          $rootScope.message = data.data.status.message;
+                          if("SEC-104".match(data.data.status.code)){
+                                $location.path("/login")   
+                          }
+                    }
+                }
+              }
+
                 console.log("UserService  getCurrentUser success: currentUser: "+currentUser);
 
             }).error(function (data, status, headers, config) {

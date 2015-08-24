@@ -8,8 +8,8 @@
  * Controller of the pssdashApp
  */
 
-app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $location) {
-
+app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService) {
+    UserService.getCurrentUser('login');
 	$scope.submitPost = function () {
     console.log("LoginCtrl submitPost");
           var data = {
@@ -46,7 +46,12 @@ console.log("LoginCtrl submitPost req password:"+req.data.data.password);
                     if(data.data.pssdash_session!=null){
                       $scope.winestory_session = data.data.pssdash_session;
                       $cookies.put('pssdash_session', data.data.pssdash_session);
-                      console.log("LoginCtrl success: pssdash_session: "+data.data.pssdash_session); 
+                      console.log("LoginCtrl success: pssdash_session: "+data.data.pssdash_session);
+                        if(data.data.user!=null){
+                            console.log("LoginCtrl data.data.user: "+data.data.user.full_name);
+                            $rootScope.user=data.data.user;   
+                        }
+                      console.log("LoginCtrl redirecting to /tasks");
                       $location.path('/tasks');
                     }
                   }
