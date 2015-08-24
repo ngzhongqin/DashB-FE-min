@@ -8,12 +8,15 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams) {
+app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,UserService,$cookies) {
 
   console.log("SslViewCtrl ");
+    
+    UserService.getCurrentUser('ssl-view');
+    var session_id = $cookies.get('pssdash_session');
 
     console.log("SslViewCtrl $routeParams.param1: "+$routeParams.param1);
-  var url = backendHostname+'/ssls?action=View'+'&'+'ssl='+$routeParams.param1;
+  var url = backendHostname+'/ssls?action=View'+'&'+'ssl='+$routeParams.param1+'&'+'session_id='+session_id;;
 
     var data = {
         'field1' : 'dummy'
@@ -37,6 +40,13 @@ app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams) {
 
           console.log("data.data"+ data.data);
           console.log("$scope.ssl: "+ $scope.ssl);
+          
+          $scope.code = data.data.status.code;
+          $scope.message = data.data.status.message;
+          if("SEC-104" == data.data.status.code){
+            $location.path("/login")   
+          }
+          
       }).error(function (data, status, headers, config) {
           $scope.status = status + ' ' + headers;
       });
@@ -68,7 +78,7 @@ app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams) {
               'owner': $scope.ssl.owner
           };
 
-          var req_url = backendHostname+'/ssls?action=Update'+'&'+'ssl='+$routeParams.param1;
+          var req_url = backendHostname+'/ssls?action=Update'+'&'+'ssl='+$routeParams.param1+'&'+'session_id='+session_id;;
           var req = {
            method: 'POST',
 

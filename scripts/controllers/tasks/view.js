@@ -8,10 +8,14 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams) {
-
+app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams, $cookies) {
+  var session_id = $cookies.get('pssdash_session');
+    $scope.code = null;
+    $scope.message = null;
   console.log("$routeParams.param1: "+$routeParams.param1);
-  var url = backendHostname+'/tasks?action=View'+'&'+'task='+$routeParams.param1;
+  var req_url = backendHostname+'/tasks?action=View'+'&'+'task='+$routeParams.param1+'&'+'session_id='+session_id;
+
+//  var req_url = backendHostname+'/tasks?action=GetTasks'+'&'+'session_id='+session_id;
 
     var data = {
         'field1' : 'dummy'
@@ -19,7 +23,7 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
 
     var req = {
      method: 'GET',
-     url: url,
+     url: req_url,
      headers: {
        'Content-Type': "text/plain"
      },
@@ -33,6 +37,15 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
 
           console.log("data.data"+ data.data);
           console.log("$scope.task: "+ $scope.task);
+          
+          $scope.code = data.data.status.code;
+          $scope.message = data.data.status.message;
+          if("SEC-104" == data.data.status.code){
+              console.log("taskView.js - SEC-104 - data.data.status.code:"+data.data.status.code);
+            $location.path("/login")   
+          }
+          
+          
       }).error(function (data, status, headers, config) {
           $scope.status = status + ' ' + headers;
       });
@@ -50,7 +63,7 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams)
               'datedue': $scope.task.datedue
           };
 
-          var req_url = backendHostname+'/tasks?action=Update'+'&'+'task='+$routeParams.param1;
+          var req_url = backendHostname+'/tasks?action=Update'+'&'+'task='+$routeParams.param1+'&'+'session_id='+session_id;
           var req = {
            method: 'POST',
 

@@ -8,8 +8,10 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SslNewCtrl', function ($scope, $http, $location,$routeParams) {
-
+app.controller('SslNewCtrl', function ($scope, $http, $location,$routeParams,UserService,$cookies) {
+    UserService.getCurrentUser('ssls-new');
+    var session_id = $cookies.get('pssdash_session');
+    
   $scope.submitPost = function () {
     console.log("SslNewCtrl submitPost");
     console.log("SslNewCtrl submitPost poStatus:"+$scope.ssl.poStatus);
@@ -34,7 +36,7 @@ app.controller('SslNewCtrl', function ($scope, $http, $location,$routeParams) {
               'owner': $scope.ssl.owner
           };
 
-          var req_url = backendHostname+'/ssls?action=New';
+          var req_url = backendHostname+'/ssls?action=New'+'&'+'session_id='+session_id;;
           var req = {
            method: 'POST',
 

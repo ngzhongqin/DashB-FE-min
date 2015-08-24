@@ -37,7 +37,7 @@ app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$locati
           $scope.tasks = data.data; 
           $scope.code = data.data.status.code;
           $scope.message = data.data.status.message;
-          if("SEC-104".match(data.data.status.code)){
+          if("SEC-104" == data.data.status.code){
             $location.path("/login")   
           }
           

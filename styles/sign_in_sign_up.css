@@ -1,14 +1,15 @@
 
-.center.row {
+.signup-panel.center.row {
+
+}
+
+.signup-panel {
+  padding: 15px;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5%;
   max-width: 500px;
-}
-
-.signup-panel {
-  padding: 15px;
 }
 
 .signup-panel i {
