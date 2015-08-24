@@ -29,8 +29,8 @@ app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $loca
           }
 
 
-        console.log("LoginCtrl submitPost req email:"+req.data.data.email);
-        console.log("LoginCtrl submitPost req password:"+req.data.data.password);
+console.log("LoginCtrl submitPost req email:"+req.data.data.email);
+console.log("LoginCtrl submitPost req password:"+req.data.data.password);
 
 
           $http(req).success(function (data, status, headers, config) {
@@ -43,11 +43,11 @@ app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $loca
                       $rootScope.code = data.data.code;
                       $rootScope.message = data.data.message;
                       
-                    if(data.data.pasdash_session!=null){
-                      $scope.pasdash_session = data.data.pasdash_session;
-                      $cookies.put('pasdash_session', data.data.pasdash_session);
-                      console.log("LoginCtrl success: pasdash_session: "+data.data.pasdash_session); 
-                      $location.path('/');
+                    if(data.data.pssdash_session!=null){
+                      $scope.winestory_session = data.data.pssdash_session;
+                      $cookies.put('pssdash_session', data.data.pssdash_session);
+                      console.log("LoginCtrl success: pssdash_session: "+data.data.pssdash_session); 
+                      $location.path('/tasks');
                     }
                   }
                 }

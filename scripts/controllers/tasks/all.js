@@ -8,7 +8,8 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TasksCtrl', function ($scope, $http) {
+app.controller('TasksCtrl', function ($scope, $http,UserService) {
+    UserService.getCurrentUser('tasks');
 
     var data = {
         'field1' : $scope.tasks,

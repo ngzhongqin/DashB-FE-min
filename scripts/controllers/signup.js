@@ -47,7 +47,7 @@ app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $loc
                       $rootScope.message = data.data.message;
                       
                     if(data.data.pasdash_session!=null){
-                      $scope.winestory_session = data.data.pasdash_session;
+                      $rootScope.pasdash_session = data.data.pasdash_session;
                       $cookies.put('pasdash_session', data.data.pasdash_session);
                       console.log("SignUpCtrl success: pasdash_session: "+data.data.pasdash_session); 
                       $location.path('/');
