@@ -15,7 +15,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/body.css">
-    <link rel="stylesheet" href="styles/sign_in_sign_up.css"> 
+    <link rel="stylesheet" href="styles/sign_in_sign_up.css">
+    <link rel="stylesheet" href="styles/foundation-icons/foundation-icons.css">
 <!--    <link rel="stylesheet" href="styles/footer.css">-->
     <!-- endbuild -->
   </head>
@@ -42,6 +43,7 @@
               <a href="#">{{user.full_name}}</a>
               <ul class="dropdown">
                 <li><a href="#">Profile</a></li>
+                <li><a href="#/change_password">Change Password</a></li>
                 <li ng-if="user" > <a href="/#/logout">Logout</a></li>
               </ul>
             </li>
@@ -138,6 +140,7 @@
       
         <script src="scripts/controllers/login.js"></script>
         <script src="scripts/controllers/logout.js"></script>
+        <script src="scripts/controllers/change_password.js"></script>
       
         <script src="scripts/controllers/signup.js"></script>
         <script src="scripts/vendor/d3.v3.min.js"></script>

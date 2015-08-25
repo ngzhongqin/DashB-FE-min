@@ -75,7 +75,12 @@ var app = angular
         controller: 'LogoutCtrl',
         controllerAs: 'logout'
       })
-
+      .when('/change_password', {
+        templateUrl: 'views/change_password.html',
+        controller: 'ChangePasswordCtrl',
+        controllerAs: 'change_password'
+      })
+    
       .when('/signup', {
         templateUrl: 'views/signup.html',
         controller: 'SignUpCtrl',

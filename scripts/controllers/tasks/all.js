@@ -35,9 +35,9 @@ app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$locati
 
       $http(req).success(function (data, status, headers, config) {
           $scope.tasks = data.data; 
-          $scope.code = data.data.status.code;
-          $scope.message = data.data.status.message;
-          if("SEC-104" == data.data.status.code){
+          $rootScope.code = data.data.returnStatus.code;
+          $rootScope.message = data.data.returnStatus.message;
+          if("SEC-104" == data.data.returnStatus.code){
             $location.path("/login")   
           }
           

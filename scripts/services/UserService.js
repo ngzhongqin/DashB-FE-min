@@ -1,5 +1,5 @@
 
-app.service('UserService', function ($cookies, $http, $rootScope) {
+app.service('UserService', function ($cookies, $http, $rootScope, $location) {
 return {
     getCurrentUser: function (current_page) {
         var currentUser;
@@ -29,6 +29,8 @@ return {
                 console.log("data.user"+ data.user);
                 if(data.user!=null){
                     console.log("data.user.full_name"+ data.user.full_name);
+                }else{
+                  $location.path("/login");    
                 }
                 
               if(data!=null){
@@ -36,8 +38,8 @@ return {
                     if(data.data.status!=null){
                           $rootScope.code = data.data.status.code;
                           $rootScope.message = data.data.status.message;
-                          if("SEC-104".match(data.data.status.code)){
-                                $location.path("/login")   
+                          if("SEC-104" == data.data.status.code ){
+                                $location.path("/login");   
                           }
                     }
                 }
@@ -48,6 +50,8 @@ return {
             }).error(function (data, status, headers, config) {
                 $scope.status = status + ' ' + headers;
             });
+        }else{
+            $location.path("/login"); 
         }
 
         return currentUser;
