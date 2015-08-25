@@ -37,19 +37,15 @@ app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $loc
 
 
           $http(req).success(function (data, status, headers, config) {
-                $scope.code = data.data.code;
-                console.log("SignUpCtrl success: code: "+data.data.code); 
-                $scope.message = data.data.message;
-                console.log("SignUpCtrl success: message: "+data.data.message); 
+                $rootScope.code = data.data.returnStatus.code;
+                $rootScope.message = data.data.returnStatus.message;
                 if(data!=null){
                   if(data.data!=null){
-                      $rootScope.code = data.data.code;
-                      $rootScope.message = data.data.message;
                       
-                    if(data.data.pasdash_session!=null){
-                      $rootScope.pasdash_session = data.data.pasdash_session;
-                      $cookies.put('pasdash_session', data.data.pasdash_session);
-                      console.log("SignUpCtrl success: pasdash_session: "+data.data.pasdash_session); 
+                    if(data.data.data.pasdash_session!=null){
+                      $rootScope.pasdash_session = data.data.data.pasdash_session;
+                      $cookies.put('pasdash_session', data.data.data.pasdash_session);
+                      console.log("SignUpCtrl success: pasdash_session: "+data.data.data.pasdash_session); 
                       $location.path('/');
                     }
                   }

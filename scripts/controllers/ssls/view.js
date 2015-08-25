@@ -8,7 +8,7 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,UserService,$cookies) {
+app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,UserService,$cookies, $rootScope) {
 
   console.log("SslViewCtrl ");
     
@@ -32,7 +32,7 @@ app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,Us
     }
 
       $http(req).success(function (data, status, headers, config) {
-          $scope.ssl = data.data; 
+          $scope.ssl = data.data.data; 
          $scope.ssl.datedue = new Date($scope.ssl.datedue);
           $scope.ssl.start_date = new Date($scope.ssl.start_date);
            $scope.ssl.end_date = new Date($scope.ssl.end_date);
@@ -41,9 +41,9 @@ app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,Us
           console.log("data.data"+ data.data);
           console.log("$scope.ssl: "+ $scope.ssl);
           
-          $scope.code = data.data.status.code;
-          $scope.message = data.data.status.message;
-          if("SEC-104" == data.data.status.code){
+          $rootScope.code = data.data.returnStatus.code;
+          $rootScope.message = data.data.returnStatus.message;
+          if("SEC-104" == data.data.returnStatus.code){
             $location.path("/login")   
           }
           

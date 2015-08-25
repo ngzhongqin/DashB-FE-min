@@ -27,15 +27,11 @@ app.controller('LogoutCtrl', function ($scope, $rootScope, $http, $cookies, $loc
 
       $http(req).success(function (data, status, headers, config) {
             $cookies.remove('pssdash_session');
-            $rootScope.user = null;
-            $scope.code = data.data.code;
-            console.log("LogoutCtrl success: code: "+data.data.code); 
-            $scope.message = data.data.message;
-            console.log("LogoutCtrl success: message: "+data.data.message); 
+            $rootScope.user = null;      
+            $rootScope.code = data.data.returnStatus.code;
+            $rootScope.message = data.data.returnStatus.message;
             if(data!=null){
               if(data.data!=null){
-                  $rootScope.code = data.data.code;
-                  $rootScope.message = data.data.message;
                   $location.path('/login');
               }
             }

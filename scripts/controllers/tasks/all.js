@@ -34,14 +34,14 @@ app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$locati
     }
 
       $http(req).success(function (data, status, headers, config) {
-          $scope.tasks = data.data; 
+          $scope.tasks = data.data.data; 
           $rootScope.code = data.data.returnStatus.code;
           $rootScope.message = data.data.returnStatus.message;
           if("SEC-104" == data.data.returnStatus.code){
             $location.path("/login")   
           }
           
-          console.log("data.data"+ data.data);
+          console.log("data.data.data"+ data.data.data);
           console.log("$scope.tasks: "+ $scope.task);
       }).error(function (data, status, headers, config) {
           $scope.status = status + ' ' + headers;

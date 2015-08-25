@@ -8,7 +8,7 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams, $cookies) {
+app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams, $cookies,$rootScope) {
   var session_id = $cookies.get('pssdash_session');
     $scope.code = null;
     $scope.message = null;
@@ -31,17 +31,18 @@ app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams,
     }
 
       $http(req).success(function (data, status, headers, config) {
-          $scope.task = data.data; 
+          $scope.task = data.data.data; 
          $scope.task.datedue = new Date($scope.task.datedue);
-
-
-          console.log("data.data"+ data.data);
+          $rootScope.code = data.data.returnStatus.code;
+          $rootScope.message = data.data.returnStatus.message;
+          
+          console.log("data.data.data"+ data.data.data);
           console.log("$scope.task: "+ $scope.task);
           
-          $scope.code = data.data.status.code;
-          $scope.message = data.data.status.message;
-          if("SEC-104" == data.data.status.code){
-              console.log("taskView.js - SEC-104 - data.data.status.code:"+data.data.status.code);
+          $rootScope.code = data.data.returnStatus.code;
+          $rootScope.message = data.data.returnStatus.message;
+          if("SEC-104" == data.data.returnStatus.code){
+              console.log("taskView.js - SEC-104 - data.data.status.code:"+data.data.returnStatus.code);
             $location.path("/login")   
           }
           

@@ -34,22 +34,20 @@ console.log("LoginCtrl submitPost req password:"+req.data.data.password);
 
 
           $http(req).success(function (data, status, headers, config) {
-                $scope.code = data.data.code;
-                console.log("LoginCtrl success: code: "+data.data.code); 
-                $scope.message = data.data.message;
-                console.log("LoginCtrl success: message: "+data.data.message); 
+              
+                $rootScope.code = data.data.returnStatus.code;
+                $rootScope.message = data.data.returnStatus.message;
+              
                 if(data!=null){
                   if(data.data!=null){
-                      $rootScope.code = data.data.code;
-                      $rootScope.message = data.data.message;
                       
-                    if(data.data.pssdash_session!=null){
-                      $scope.winestory_session = data.data.pssdash_session;
-                      $cookies.put('pssdash_session', data.data.pssdash_session);
-                      console.log("LoginCtrl success: pssdash_session: "+data.data.pssdash_session);
+                    if(data.data.data.pssdash_session!=null){
+                      $scope.winestory_session = data.data.data.pssdash_session;
+                      $cookies.put('pssdash_session', data.data.data.pssdash_session);
+                      console.log("LoginCtrl success: pssdash_session: "+data.data.data.pssdash_session);
                         if(data.data.user!=null){
-                            console.log("LoginCtrl data.data.user: "+data.data.user.full_name);
-                            $rootScope.user=data.data.user;   
+                            console.log("LoginCtrl data.data.user: "+data.data.data.user.full_name);
+                            $rootScope.user=data.data.data.user;   
                         }
                       console.log("LoginCtrl redirecting to /tasks");
                       $location.path('/tasks');

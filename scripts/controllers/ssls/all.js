@@ -8,7 +8,7 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SslCtrl', function ($scope, $http,$cookies,UserService) {
+app.controller('SslCtrl', function ($scope, $http,$cookies,UserService, $rootScope) {
     UserService.getCurrentUser('ssls');
     
     var session_id = $cookies.get('pssdash_session');
@@ -29,13 +29,14 @@ app.controller('SslCtrl', function ($scope, $http,$cookies,UserService) {
     }
 
       $http(req).success(function (data, status, headers, config) {
-          $scope.ssls = data.data; 
-          console.log("data.data"+ data.data);
+          $scope.ssls = data.data.data; 
+          $rootScope.code = data.data.returnStatus.code;
+          $rootScope.message = data.data.returnStatus.message;
+          
+          console.log("data.data.data"+ data.data.data);
           console.log("$scope.ssls: "+ $scope.ssls);
           
-          $scope.code = data.data.status.code;
-          $scope.message = data.data.status.message;
-          if("SEC-104" == data.data.status.code){
+          if("SEC-104" == data.data.returnStatus.code){
             $location.path("/login")   
           }
           
