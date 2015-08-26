@@ -8,12 +8,9 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$location,$rootScope) {
-    UserService.getCurrentUser('tasks');
+app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$location,$rootScope,UserService2) {
     
-//    if($rootScope.user==null){
-//        $location.path("/login")   
-//    }
+    UserService2.user(function(data) {}); 
     
     var session_id = $cookies.get('pssdash_session');
     var data = {

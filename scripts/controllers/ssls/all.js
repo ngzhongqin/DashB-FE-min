@@ -8,8 +8,9 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SslCtrl', function ($scope, $http,$cookies,UserService, $rootScope) {
-    UserService.getCurrentUser('ssls');
+app.controller('SslCtrl', function ($scope, $http,$cookies,UserService, $rootScope,UserService2) {
+    UserService2.user(function(data) {}); 
+//    UserService.getCurrentUser('ssls');
     
     var session_id = $cookies.get('pssdash_session');
     var data = {

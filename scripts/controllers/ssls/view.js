@@ -8,11 +8,12 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,UserService,$cookies, $rootScope) {
-
+app.controller('SslViewCtrl', function ($scope, $http, $location,$routeParams,$cookies, $rootScope,UserService2) {
+  UserService2.user(function(data) {}); 
+    
   console.log("SslViewCtrl ");
     
-    UserService.getCurrentUser('ssl-view');
+//    UserService.getCurrentUser('ssl-view');
     var session_id = $cookies.get('pssdash_session');
 
     console.log("SslViewCtrl $routeParams.param1: "+$routeParams.param1);
