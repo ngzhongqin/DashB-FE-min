@@ -8,9 +8,9 @@
  * Controller of the pssdashApp
  */
 
-app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService, UserService2, AlertBoxService) {
-//    UserService.getCurrentUser('login');
-    
+app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService2, AlertBoxService) {
+    UserService2.user(function(data) {}); 
+      
     AlertBoxService.close();
 	$scope.submitPost = function () {
     console.log("LoginCtrl submitPost");
