@@ -8,7 +8,9 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams, $cookies,$rootScope) {
+app.controller('TaskViewCtrl', function ($scope, $http, $location, $routeParams, $cookies,$rootScope,UserService2) {
+    UserService2.user(function(data) {});
+    
   var session_id = $cookies.get('pssdash_session');
     $scope.code = null;
     $scope.message = null;

@@ -8,7 +8,9 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TasksNewCtrl', function ($scope, $http, $location,$routeParams,$cookies) {
+app.controller('TasksNewCtrl', function ($scope, $http, $location,$routeParams,$cookies,UserService2) {
+    UserService2.user(function(data) {}); 
+    
     var session_id = $cookies.get('pssdash_session');
     
 	$scope.submitPost = function () {

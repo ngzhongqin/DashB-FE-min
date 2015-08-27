@@ -8,7 +8,7 @@
  * Controller of the winestoryApp
  */
 
-app.controller('LogoutCtrl', function ($scope, $rootScope, $http, $cookies, $location) {
+app.controller('LogoutCtrl', function ($scope, $rootScope, $http, $cookies, $location,AlertBoxService) {
     var session_id = $cookies.get('pssdash_session');
     console.log("LogoutCtrl submitPost");
           var data = {
@@ -30,6 +30,10 @@ app.controller('LogoutCtrl', function ($scope, $rootScope, $http, $cookies, $loc
             $rootScope.user = null;      
             $rootScope.code = data.data.returnStatus.code;
             $rootScope.message = data.data.returnStatus.message;
+
+            AlertBoxService.open();          
+            AlertBoxService.close();
+          
             if(data!=null){
               if(data.data!=null){
                   $location.path('/login');

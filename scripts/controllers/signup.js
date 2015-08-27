@@ -8,8 +8,10 @@
  * Controller of the pssdashApp
  */
 
-app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $location) {
+app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $location, AlertBoxService) {
 
+    
+    
 	$scope.submitPost = function () {
     console.log("SignUpCtrl submitPost");
           var data = {
@@ -37,15 +39,23 @@ app.controller('SignUpCtrl', function ($scope, $rootScope, $http, $cookies, $loc
 
 
           $http(req).success(function (data, status, headers, config) {
-                $rootScope.code = data.data.returnStatus.code;
-                $rootScope.message = data.data.returnStatus.message;
+              console.log("SignUpCtrl: data.data.returnStatus.code:"+data.data.returnStatus.code);
+              console.log("SignUpCtrl: data.data.returnStatus.message:"+data.data.returnStatus.message);
+              console.log("SignUpCtrl: data.data.data.pssdash_session:"+data.data.data.pssdash_session);
+              $cookies.put('pssdash_session', data.data.data.pssdash_session);
+            $rootScope.code = data.data.returnStatus.code;
+            $rootScope.message = data.data.returnStatus.message;
+              
+              AlertBoxService.open();
+              AlertBoxService.close();
+              
                 if(data!=null){
                   if(data.data!=null){
                       
-                    if(data.data.data.pasdash_session!=null){
-                      $rootScope.pasdash_session = data.data.data.pasdash_session;
-                      $cookies.put('pasdash_session', data.data.data.pasdash_session);
-                      console.log("SignUpCtrl success: pasdash_session: "+data.data.data.pasdash_session); 
+                    if(data.data.data.pssdash_session!=null){
+                      $rootScope.pssdash_session = data.data.data.pssdash_session;
+                      $cookies.put('pssdash_session', data.data.data.pssdash_session);
+                      console.log("SignUpCtrl success: pssdash_session: "+data.data.data.pssdash_session); 
                       $location.path('/');
                     }
                   }

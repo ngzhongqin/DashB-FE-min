@@ -8,8 +8,10 @@
  * Controller of the pssdashApp
  */
 
-app.controller('ChangePasswordCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService) {
-    UserService.getCurrentUser('change_password');
+app.controller('ChangePasswordCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService2,AlertBoxService) {
+//    UserService.getCurrentUser('change_password');
+        UserService2.user(function(data) {}); 
+    
     var session_id = $cookies.get('pssdash_session');
     
 	$scope.submitPost = function () {
@@ -37,6 +39,9 @@ app.controller('ChangePasswordCtrl', function ($scope, $rootScope, $http, $cooki
           $http(req).success(function (data, status, headers, config) {
               $rootScope.code = data.data.returnStatus.code;
               $rootScope.message = data.data.returnStatus.message;
+              
+              AlertBoxService.open();
+              AlertBoxService.close();
 
                 if(data!=null){
                   if(data.data!=null){

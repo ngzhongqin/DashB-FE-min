@@ -8,10 +8,10 @@
  * Controller of the pssdashApp
  */
 
-app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService, UserService2) {
+app.controller('LoginCtrl', function ($scope, $rootScope, $http, $cookies, $location, UserService, UserService2, AlertBoxService) {
 //    UserService.getCurrentUser('login');
     
-    
+    AlertBoxService.close();
 	$scope.submitPost = function () {
     console.log("LoginCtrl submitPost");
           var data = {
@@ -39,6 +39,9 @@ console.log("LoginCtrl submitPost req password:"+req.data.data.password);
               
                 $rootScope.code = data.data.returnStatus.code;
                 $rootScope.message = data.data.returnStatus.message;
+              
+                AlertBoxService.open();          
+                AlertBoxService.close();
               
                 if(data!=null){
                   if(data.data!=null){
