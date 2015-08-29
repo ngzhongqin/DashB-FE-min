@@ -38,6 +38,13 @@ var app = angular
         controller: 'TasksCtrl',
         controllerAs: 'tasks'
       })
+    
+      .when('/mypage', {
+        templateUrl: 'views/mypage/mypage.html',
+        controller: 'MyPageCtrl',
+        controllerAs: 'mypage'
+      })
+    
       .when('/tasks/new', {
         templateUrl: 'views/tasks/new.html',
         controller: 'TasksNewCtrl',

@@ -8,7 +8,7 @@
  * Controller of the pssdashApp
  */
 
-app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$location,$rootScope,UserService2) {
+app.controller('TasksCtrl', function ($scope, $http,$cookies,$location,$rootScope,UserService2) {
     
     UserService2.user(function(data) {}); 
     
@@ -18,12 +18,10 @@ app.controller('TasksCtrl', function ($scope, $http,UserService,$cookies,$locati
     };
 
     var req_url = backendHostname+'/tasks?action=GetTasks'+'&'+'session_id='+session_id;
-//    var url = backendHostname+'/tasks';
 
     var req = {
      method: 'POST',
      url: req_url,
-     // url: 'http://localhost:8080/tasks',
      headers: {
        'Content-Type': "text/plain"
      },

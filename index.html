@@ -40,7 +40,7 @@
       <ul class="right">
           
             <li ng-if="user" class="has-dropdown">
-              <a href="#">{{user.full_name}}</a>
+              <a href="#/mypage">{{user.full_name}}</a>
               <ul class="dropdown">
                 <li><a href="#/change_password">Change Password</a></li>
                 <li ng-if="user" > <a href="/#/logout">Logout</a></li>
@@ -124,8 +124,12 @@
         <script src="scripts/services/UserService.js"></script>
         <script src="scripts/services/UserService2.js"></script>
         <script src="scripts/services/AlertBoxService.js"></script>
-      
+        <script src="scripts/services/TaskService.js"></script>
+        
         <script src="scripts/controllers/main.js"></script>
+      
+        <script src="scripts/controllers/mypage/mypage.js"></script>
+        
         <script src="scripts/controllers/tasks/all.js"></script>
         <script src="scripts/controllers/tasks/new.js"></script>
         <script src="scripts/controllers/tasks/view.js"></script>
